@@ -1,16 +1,24 @@
-//- html
-//-     head
-//-         title= title
-//-     body
-//-         h1= message
-html
-    head
-        title= title
-    body
-        h1= message
-        form(class="form-signin" method="POST" action="/login")
-            label( for="inputUsername") Email address
-            input(type="text" name="username" id="inputUsername" placeholder="Username" autofocus)
-            label(for="inputPassword" class="sr-only") Password
-            input(type="password" name="password" id="inputPassword" placeholder="Password")
-            button(type="submit") Sign in
+doctype html
+html(  lang="en"  )
+  head
+    title= homePage
+    meta( charset="UTF-8" )
+    meta( name="viewport", content="width=device-width, initial-scale=1.0" )
+    style
+        include style.css
+  body
+    //- h1= message
+    #main
+     form( method="POST" action="/login" )
+       div.label welcome!
+       div.username
+        input( id="email" name="email" type="text" placeholder="email" )
+       div.password
+        input( id="password" name="password" type="password" placeholder="password" )
+       div.checkbox
+        input( type="checkbox" name="agreement" checked )
+        |Remember me
+       button( type="submit" ) login
+       p
+        | not a member
+        a( href="#" ) Sing Up now
